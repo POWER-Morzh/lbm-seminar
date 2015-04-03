@@ -1,0 +1,7 @@
+
+\section{How does the method work}
+In MD we are keeping coordinates and velocities of particles in float(double) precision, using that information we can compute all interactions between each particle by computing forces between them.
+
+The Lattice Gas Cellular automata(LGCA) reduce MD computational complexity by discretization of space, velocities and move directions, and replaces molecule-by-molecule force calculation by rigid body collision. LGCA saves information about particles on the vertexes. Each vertex can have only one particle, therefore we need only boolean values. $n_i=0$ - there is no particle on the vertex i, and $n_i=1$ – if it has a particle.
+
+LBM takes it's origins from its predecessor Lattice Gas methods (LG), but instead of discretization of each particle(cell) in time and space, which can move in fixed direction, it uses ensemble of particles, the behaviour of whose described with simplified model of Boltzmann equation.

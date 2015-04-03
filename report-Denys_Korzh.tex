@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 	Template for seminar reports
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,pdftex]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+
+% graphicx and figures
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% C code
+\usepackage{listings}
+
+% url
+\usepackage[hyphenbreaks]{breakurl}
+\usepackage[hyphens]{url}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	Paper title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Introduction to LBM}
+\subtitle{Seminar Lattice Boltzmann Methods:\\Theory, Implementation and Applications}
+
+\author{
+Denys Korzh\\
+Department of Computational Science and Engineering\\Technische Universit\"at M\"unchen\\
+Email: denys.korzh@tum.de 
+}
+
+\maketitle
+
+% include abstract
+\input{abstract}
+% no page number on first page
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	Sections, Subsections,...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{introduction}
+
+\input{section2}
+
+\input{section3}
+
+\input{section4}
+
+\input{section5}
+
+\input{section6}
+
+\input{section7}
+
+\input{conclusion}
+
+\input{references}
+
+\end{document}
+
+

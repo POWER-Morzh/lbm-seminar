@@ -1,0 +1,20 @@
+
+\section{Introduction}
+Lattice-Boltzmann method is an approach to implement flow of fluid. LBM is based on statistical physics as in comparison to Navier-Stocks approach(NS), which discretizes Navier-Stocks equations and solves them directly.
+
+LBM belongs to Mesoscale as in comparison to NV(Macroscale) and Molecular Dynamics(Microscale). LBM is a simplification (abstraction) of ML and NS is an averaging of LBM. Results which you get with NS approach(vector field, density, pressure) can be computed from LBM results.
+
+The Lattice Boltzmann method was brought in life in 1988 by G. McNamara and G. Zanetti [2],  that means that LBM is relatively new and still evolving method.
+
+\subsection{Advantage over NSE}
+
+NS equations(NSE) describe flow only for incompressible, isothermal, Newtonian fluid. It uses continuum assumption. Not all problems can be solved with NSE(for example flow in carbon nanotube). Fluids in reality are composed of atoms and molecules, which have empty space in between. Fluids under the continuum assumption are composed of continuous matter, filling the entire space. Continuum assumption is valid for $Kn \ll 1$ where Kn is a Knudsen number:
+\begin{equation}
+Kn=\frac{\lambda}{L_c}
+\end{equation}
+where $L_c$ is a characteristic length and $\lambda$ - mean free path. Air has $\lambda \approx O(nm)$ in STP(Standard conditions for temperature and pressure).
+
+If we have small particle in fluid at rest then velocity of particles $U=0$, Lc is equal to diameter of particle which decreases, therefore Kn increase and when Kn approaches 1, the particle begins to feel collisions with individual molecules and we have Brownian morion. But NSE predict no motion of particles!
+
+\subsection{Advantage over Molecular Dynamics}
+With MD simulations we extremely restricted by the size of the memory. The largest MD simulation is $4.125*10^{12}$ particles[4], for comparison one millilitre of water consist of $3*10^{22}$ particles.
