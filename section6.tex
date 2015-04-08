@@ -1,9 +1,9 @@
 
 \section{Own implementation: lid-driven cavity}
 
-In my own implementation [5] I implemented lid-driven cavity in 3D with D3Q19 model. The streaming and collision were implemented as described before in two different steps. Further figures are received on the 5000th iteration. The initial velocity of the lid was 0.01 and the size of the cavity was 50 cells. On the figure 7 you can see density distribution. In both corners of the cavity you can observe high and low density zones which response to hight and low pressure respectively. Which is correct case, when you simulate lid-driven cavity.
+In our own implementation [5] we implemented a lid-driven cavity in 3D with D3Q19 model. The streaming and collision were implemented as described before in two different steps. Further figures are received on the 5000th iteration. The initial velocity of the lid was 0.01 and the size of the cavity was 50 cells. On Figure 7 a density distribution is shown. In both corners of the cavity you can observe high and low density zones which response to high and low pressure respectively. This behaviour is correct for lid-driven cavity systems. 
 
-The resulted velocities you can see on the figure 8. In the left lower corner is the vertex which response to the stream with direction other then main vertex, what response to the result if you simulate lid-driven cavity with Navier-Stokes equations.
+The resulted velocity stream field can be seen on Figure 8. There is a vertex in the left lower corner, which response to the stream with the direction (anticlockwise) other than the direction (clockwise) of the main(big) vertex. The result of the LBM simulation responses to the result of the lid-driven cavity simulation with Navier-Stokes method.
 
 \begin{figure}[H]
   \centering
@@ -14,5 +14,5 @@ The resulted velocities you can see on the figure 8. In the left lower corner is
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{img/fig11.png}
-  \caption{Visualization of the velocity field and of the stream in the lid-driven cavity simulation with D3Q19 model.}
+  \caption{Visualization of the velocity stream field in the lid-driven cavity simulation with D3Q19 model.}
 \end{figure}

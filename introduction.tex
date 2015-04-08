@@ -1,23 +1,24 @@
 
 \section{Introduction}
 
-This paper consists of 7 sections. In first two sections we will introduce to you Lattice-Boltzmann method and tell the history of LBM development. From third till sixth section the concepts of the method, and its implementation, will be represented. And not to forget about summary which will be the last part of the paper.
+Lattice-Boltzmann method is an approach to implement fluid flows. LBM is based on statistical physics, in contrast to Navier-Stocks approach (NS), which discretizes Navier-Stocks equations and solves them directly.
 
-Lattice-Boltzmann method is an approach to implement flow of fluid. LBM is based on statistical physics as in comparison to Navier-Stocks approach(NS), which discretizes Navier-Stocks equations and solves them directly.
+LBM belongs to Mesoscale as opposed by NV (Macroscale) and Molecular Dynamics (Microscale). LBM is a simplification (abstraction) of Molecular Dynamics (MD) and NS is an averaging of LBM. Results obtained with NS approach (vector field, density, pressure) can be computed from LBM results.
 
-LBM belongs to Mesoscale as in comparison to NV(Macroscale) and Molecular Dynamics(Microscale). LBM is a simplification (abstraction) of ML and NS is an averaging of LBM. Results which you get with NS approach(vector field, density, pressure) can be computed from LBM results.
+The Lattice-Boltzmann method was developed in 1988 by G. McNamara and G. Zanetti [2], making it a relatively new method that still undergoes dynamical development.
 
-The Lattice Boltzmann method was brought in life in 1988 by G. McNamara and G. Zanetti [2],  that means that LBM is relatively new and still evolving method.
+This paper consists of 7 sections. In first two sections we will introduce  Lattice-Boltzmann method and tell the history of LBM development. From third to sixth section the concepts of the method, and their  implementation, will be presented. And the  summary will be the last part of the paper.
 
 \subsection{Advantage over NSE}
 
-NS equations(NSE) describe flow only for incompressible, isothermal, Newtonian fluid. It uses continuum assumption. Not all problems can be solved with NSE(for example flow in carbon nanotube). Fluids in reality are composed of atoms and molecules, which have empty space in between. Fluids under the continuum assumption are composed of continuous matter, filling the entire space. Continuum assumption is valid for $Kn \ll 1$ where Kn is a Knudsen number:
+NS equations (NSE) describe flow only for incompressible, isothermal, Newtonian fluid. It assumes a continuum domain. Not all problems can be solved with NSE (e.g. carbon nanotube flows). Fluids in reality are composed of atoms and molecules, which have empty space in between. Fluids under the continuum assumption are composed of continuous matter, filling the entire space. Continuum assumption is valid for $Kn \ll 1$ where Kn is a Knudsen number:
 \begin{equation}
-Kn=\frac{\lambda}{L_c}
+Kn=\frac{\lambda}{L_c},
 \end{equation}
 where $L_c$ is a characteristic length and $\lambda$ - mean free path. Air has $\lambda \approx O(nm)$ in STP(Standard conditions for temperature and pressure).
 
-If we have small particle in fluid at rest then velocity of particles $U=0$, Lc is equal to diameter of particle which decreases, therefore Kn increase and when Kn approaches 1, the particle begins to feel collisions with individual molecules and we have Brownian morion. But NSE predict no motion of particles!
+If we have a small particle in a fluid at rest then the velocity of the particle $U=0$, $L_c$ is equal to the diameter of the particle which decreases, thereby increasing $Kn$ and when $Kn$ approaches 1, the particle begins to feel collisions with individual molecules, resulting in Brownian motion. However, it should be noted that NSE does not predict individual motions of particles.
 
 \subsection{Advantage over Molecular Dynamics}
-With MD simulations we extremely restricted by the size of the memory. The largest MD simulation is $4.125*10^{12}$ particles[4], for comparison one millilitre of water consist of $3*10^{22}$ particles.
+
+The downside of using MD simulations is its extreme restrictions on the memory size. The largest MD simulation is $4.125\times 10^{12}$ particles [4] — for comparison, one millilitre of water consists of $3\times 10^{22}$ particles.

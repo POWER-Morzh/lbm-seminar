@@ -1,9 +1,9 @@
 
 \section{Simple boundary conditions}
 
-We cannot build any fluid flows model without including of the influence of the surrounding environment. This influence can be described mathematically with so named boundary conditions. If we would not set our boundary conditions, then at the end all our probability densities will be streamed out of the domain with the streaming step. Boundary conditions build the external constraints which influence the solution of whole system. The implementation of Boundary conditions in LBM are straight forward, but the mathematical background of that Boundary conditions may be even more complicated, then the LBM itself.
+Any fluid flow model cannot be build without including of the influence of the surrounding environment. This influence can be described mathematically with so called boundary conditions. If the boundary conditions are not set, then at the end all the probability densities will be streamed out of the domain with the streaming step. Boundary conditions build the external constraints which influence the solution of the whole system. The implementation of the boundary conditions in LBM is straightforward, but the mathematical background of these boundary conditions may be even more complicated than the LBM itself.
 
-One of the easiest boundary conditions is no-slip. The no-slip boundary conditions are used in case of real walls or obstacles, which offer a certain amount of friction to the fluid. In the case, when the fluid velocity at the wall is reduced to zero, the Boundary conditions can be implemented in the following way: all distribution functions of a fluid cell neighboring an obstacle cell pointing towards the obstacle are simply reversed [1]. This assures, that the fluid velocity normal and tangential to the wall is zero. These are so called Dirichlet boundary conditions.
+One of the easiest boundary conditions is a no-slip. The no-slip boundary conditions are used in case of real walls or obstacles, which offer a certain amount to friction of the fluid. In the case when the fluid velocity at the wall is reduced to zero, the boundary conditions can be implemented in the following way: all distribution functions of a fluid cell neighboring an obstacle cell pointing towards the obstacle are simply reversed [1]. This assures that the fluid velocity normal and tangential to the wall are zero. These are so called Dirichlet boundary conditions.
 
 \begin{figure}[H]
   \centering
@@ -13,10 +13,10 @@ One of the easiest boundary conditions is no-slip. The no-slip boundary conditio
   \begin{subfigure}[h]{0.3\textwidth}
     \includegraphics[width=\textwidth]{img/fig8-2.png}
   \end{subfigure}
-  \caption{No-slip Boundary conditions. Left - before streaming step; Right – after streaming step [1].}
+  \caption{No-slip boundary conditions. Left - before streaming step; Right – after streaming step [1].}
 \end{figure}
 
-The next simple Boundary conditions are free-slip Boundary conditions. They can be used if we have walls without friction. An usual example of free-slip Boundary conditions is at symmetry axes in certain simulation domains, for example in the middle of a channel flow. The free-slip Boundary conditions are applied as follows: all distribution functions of a fluid cell neighboring a free-slip boundary pointing towards the boundary are reflected in their component normal to the wall. This assures, that the velocity normal to the wall is zero, whereas the velocity tangential to the wall remains unchanged [1]. These are so called Neumann boundary conditions:
+The next simple boundary conditions are free-slip boundary conditions. They can be used if we have walls without friction. A usual example of free-slip boundary conditions is at symmetry axes in certain simulation domains, for example in the middle of a channel flow. The free-slip boundary conditions are applied as follows: all distribution functions of a fluid cell neighboring a free-slip boundary pointing towards the boundary are reflected in their component normal to the wall. This assures that the velocity normal to the wall is zero, whereas the velocity tangential to the wall remains unchanged [1]. These are so called Neumann boundary conditions:
 
 \begin{equation}
 \frac{\partial v_t}{\partial n} = 0.
@@ -30,10 +30,10 @@ The next simple Boundary conditions are free-slip Boundary conditions. They can 
   \begin{subfigure}[h]{0.3\textwidth}
     \includegraphics[width=\textwidth]{img/fig9-2.png}
   \end{subfigure}
-  \caption{Free-slip Boundary conditions. Left - before streaming step; Right – after streaming step [1].}
+  \caption{Free-slip boundary conditions. Left - before streaming step; Right – after streaming step [1].}
 \end{figure}
 
-To implement the lid-driven cavity, which I will describe in the next section, we need one more Boundary conditions. Such Boundary conditions are called moved no-slip boundaries [1] (see Eq. 21). With such Boundaries we have some certain velocity of the wall, which is imparted to the fluid particles and accelerate the fluid. These boundary is similar to no-slip boundary except of the scaling term depending on the wall velocity [1]:
+To implement the lid-driven cavity, which will be described in the next section, more boundary conditions are needed. Such boundary conditions are called bounce-back condition with additional acceleration (see Eq. 21) and used to model a moving wall. With such boundaries we have some certain velocity of the wall, which is imparted to the fluid particles, accelerating the fluid. These boundaries are similar to no-slip boundaries except for the scaling term depending on the wall velocity [1]:
 
 \begin{equation}
 f_{\bar{\alpha}}(\vec{x},t) = f_{\alpha}(\vec{x},t) - 2 t_p \rho \frac{3}{c^2} c_{\alpha} u_{w}

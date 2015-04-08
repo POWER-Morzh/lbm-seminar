@@ -1,7 +1,7 @@
 
 \section{Statistical mechanics}
 
-The basic idea of Lattice-Boltzmann equations is to replace Boolean occupation numbers $n_i$ in LGCA with the corresponding ensemble-averaged populations. It can be shown, that Boltzmann equation
+The basic idea of the Lattice-Boltzmann equations is to replace Boolean occupation numbers $n_i$ in LGCA with the corresponding ensemble-averaged populations. It can be shown, that the Boltzmann equation
 
 \begin{equation}
 \frac{\partial f}{\partial t} + \vec{v} \nabla f = Q
@@ -22,25 +22,25 @@ Neglecting higher order terms, one obtains
 \begin{equation}
 \frac{\partial n_i}{\partial t} + \vec{c}_i \nabla{n_i} = \frac{\Delta_i}{\Delta t}
 \end{equation}
-and if we will substitute $n_i \rightarrow f$, $\vec{c}_i \rightarrow \vec{v}$, $\frac{\Delta_i}{\Delta t} \rightarrow Q$, then we will obtain the approximation of the Boltzmann equation. Q collision integral is very complex and is very complicated to compute, that is why it was proposed to replace it with BGK (Bhatnagar-Gross-Krook) approximation
+and if the following  substitutions are done, $n_i \rightarrow f$, $\vec{c}_i \rightarrow \vec{v}$, $\frac{\Delta_i}{\Delta t} \rightarrow Q$, then the approximation of the Boltzmann equation will be obtained. Q collision integral is very complex and is very complicated to compute, that is why it was proposed to replace it with BGK (Bhatnagar-Gross-Krook) approximation
 
 \begin{equation}
-\frac{\partial f}{\partial t} + \vec{v} \nabla f = -\frac{1}{\tau}(f - f^{(eq)})
+\frac{\partial f}{\partial t} + \vec{v} \nabla f = -\frac{1}{\tau}(f - f^{(eq)}),
 \end{equation}
-Where $f^{eq}$ is Maxwell Boltzmann equilibrium distribution. The idea behind BGK is that our model should follow Maxwell–Boltzmann distribution law, and the difference inside of collision operator gives us the deviation of computed $f$ from  Maxwell Boltzmann equilibrium distribution.
+where $f^{eq}$ is a Maxwell-Boltzmann equilibrium distribution. The idea behind BGK is that our model should follow Maxwell–Boltzmann distribution law, and the difference inside of collision operator gives us the deviation of computed $f$ from Maxwell Boltzmann equilibrium distribution.
 
-At the end we discretize Boltzmann equations to obtain Lattice-Boltzmann method
+In the end the  Boltzmann equations are discretized to obtain Lattice-Boltzmann method
 \begin{equation}
 f_i(\vec{x} + \vec{c}_i \Delta t, t + \Delta t) = f_i(\vec{x},t) + -\frac{1}{\tau} \big(f_i(\vec{x},t) - f_i^{(eq)}(\rho(\vec{x},t), u(\vec{x},t))\big)
 \end{equation}
-where $\rho$ and $u$ are macroscopic density and velocity of the flow. As we can see, instead of using of the occupation number $n_i$ we are using distribution functions $f_i$, what basically removes the noise of LGCA. Equation (7) is actually a collision update step in LBM method.
+where $\rho$ and $u$ are macroscopic density and velocity of the flow. As one can see, instead of using the occupation number $n_i$ the distribution functions $f_i$ is used, which basically removes the LGCA noise. Equation (7) is actually a collision update step in the LBM.
 
 For the lattice BGK model, the equilibrium distribution function can be calculated as
 
 \begin{equation}
 f_i^{(eq)} = f_i^{(eq)}(\rho, u) = t_p \rho ( 1 + \frac{3}{c^2} c_i u + \frac{9}{2c^4} (c_i u)^2 - \frac{3u^2}{2c^2})
 \end{equation}
-where $c_i$ is the corresponding lattice velocity, $c$ is the velocity of sound and $t_p$ is a direction dependent parameter, which depends on DdQq model. Where d is the number of dimensions and q is the number of directions in which velocities are discretized.
+where $c_i$ is the corresponding lattice velocity, $c$ is the velocity of sound and $t_p$ is a direction dependent parameter, which depends on DdQq model, where d is the number of dimensions and q is the number of directions in which velocities are discretized.
 
 In case of the D2Q9 model, $t_p$ can be derived as
 
