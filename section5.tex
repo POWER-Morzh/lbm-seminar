@@ -33,7 +33,7 @@ The next simple boundary conditions are free-slip boundary conditions (see Fig. 
   \caption{Free-slip boundary conditions. Left - before streaming step; Right – after streaming step \cite{pflaum}.}\label{fig:free-slip-BC}
 \end{figure}
 
-To implement the lid-driven cavity, which will be described in the next section, more boundary conditions are needed. Such boundary conditions are called bounce-back condition with additional acceleration (see Eq. 21) and used to model a moving wall. With such boundaries there is a wall that moves with some certain velocity, which is imparted to the fluid particles, accelerating the fluid. These boundaries are similar to no-slip boundaries except for the scaling term depending on the wall velocity \cite{pflaum}:
+To implement the lid-driven cavity, which will be described in the next section, more boundary conditions are needed. Such boundary conditions are called bounce-back condition with additional acceleration (see Eq. 21) and used to model a moving wall. Such boundaries are used to implement a wall that moves with some certain velocity, which is imparted to the fluid particles, accelerating the fluid. These boundaries are similar to no-slip boundaries except for the scaling term depending on the wall velocity \cite{pflaum}:
 
 \begin{equation}
 f_{\bar{\alpha}}(\vec{x},t) = f_{\alpha}(\vec{x},t) - 2 t_p \rho \frac{3}{c^2} c_{\alpha} u_{w}
