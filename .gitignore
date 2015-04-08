@@ -1,5 +1,9 @@
+Makefile
+*.bbl
+*.blg
 *.pdf
 *.log
 *.out
 *.gz
 *.aux
+*~

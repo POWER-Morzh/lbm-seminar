@@ -5,9 +5,9 @@ Lattice-Boltzmann method is an approach to implement fluid flows. LBM is based o
 
 LBM belongs to Mesoscale as opposed by NV (Macroscale) and Molecular Dynamics (Microscale). LBM is a simplification (abstraction) of Molecular Dynamics (MD) and NS is an averaging of LBM. Results obtained with NS approach (vector field, density, pressure) can be computed from LBM results.
 
-The Lattice-Boltzmann method was developed in 1988 by G. McNamara and G. Zanetti [2], making it a relatively new method that still undergoes dynamical development.
+The Lattice-Boltzmann method was developed in 1988 by G. McNamara and G. Zanetti \cite{succi}, making it a relatively new method that still undergoes dynamical development.
 
-This paper consists of 7 sections. In first two sections we will introduce  Lattice-Boltzmann method and tell the history of LBM development. From third to sixth section the concepts of the method, and their  implementation, will be presented. And the  summary will be the last part of the paper.
+This paper consists of 7 sections. In first two sections Lattice-Boltzmann method and the history of LBM development will be introduced. From third to sixth section the concepts of the method, and their  implementation, will be presented. And the  summary will be the last part of the paper.
 
 \subsection{Advantage over NSE}
 
@@ -17,8 +17,8 @@ Kn=\frac{\lambda}{L_c},
 \end{equation}
 where $L_c$ is a characteristic length and $\lambda$ - mean free path. Air has $\lambda \approx O(nm)$ in STP(Standard conditions for temperature and pressure).
 
-If we have a small particle in a fluid at rest then the velocity of the particle $U=0$, $L_c$ is equal to the diameter of the particle which decreases, thereby increasing $Kn$ and when $Kn$ approaches 1, the particle begins to feel collisions with individual molecules, resulting in Brownian motion. However, it should be noted that NSE does not predict individual motions of particles.
+If there is a small particle in a fluid at rest then the velocity of the particle $U=0$, $L_c$ is equal to the diameter of the particle which decreases, thereby increasing $Kn$ and when $Kn$ approaches 1, the particle begins to feel collisions with individual molecules, resulting in Brownian motion. However, it should be noted that NSE does not predict individual motions of particles.
 
 \subsection{Advantage over Molecular Dynamics}
 
-The downside of using MD simulations is its extreme restrictions on the memory size. The largest MD simulation is $4.125\times 10^{12}$ particles [4] — for comparison, one millilitre of water consists of $3\times 10^{22}$ particles.
+The downside of using MD simulations is its extreme restrictions on the memory size. The largest MD simulation is $4.125\times 10^{12}$ particles \cite{inside} — for comparison, one millilitre of water consists of $3\times 10^{22}$ particles.
